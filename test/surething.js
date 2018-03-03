@@ -31,3 +31,17 @@ test('should transform object into a promise', assert => {
   surething({name: 'hello'})
     .then(val => assert.deepEqual(val, {name: 'hello'}))
 })
+
+
+test('should transform a promise into an other promise', assert => {
+  assert.plan(1)
+  surething(new Promise(resolve => resolve('hello')))
+    .then(val => assert.deepEqual(val, 'hello'))
+})
+
+
+test('should reject a rejected promise', assert => {
+  assert.plan(1)
+  surething(new Promise((resolve, reject) => reject('hello')))
+    .then(null, val => assert.deepEqual(val, 'hello'))
+})
