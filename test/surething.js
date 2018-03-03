@@ -51,3 +51,12 @@ test('should transform function into a promise', assert => {
   const cb = success => success('hello')
   surething(cb).then(val => assert.equal(val, 'hello'))
 })
+
+
+test('should transform function into a promise and reject if throw an exception', assert => {
+  assert.plan(1)
+  const cb = () => {
+    throw new Error('this is an error')
+  }
+  surething(cb).then(null, err => assert.equal(err.message, 'this is an error'))
+})
