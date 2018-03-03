@@ -1,0 +1,31 @@
+{
+  "name": "surething",
+  "version": "1.0.0",
+  "description": "Transform every thing into a promise",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bredele/surething.git"
+  },
+  "keywords": [
+    "promise",
+    "everything",
+    "all",
+    "function"
+  ],
+  "author": "Olivier Wietrich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredele/surething/issues"
+  },
+  "homepage": "https://github.com/bredele/surething#readme",
+  "devDependencies": {
+    "tape": "^4.9.0"
+  }
+}
