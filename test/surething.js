@@ -45,3 +45,9 @@ test('should reject a rejected promise', assert => {
   surething(new Promise((resolve, reject) => reject('hello')))
     .then(null, val => assert.deepEqual(val, 'hello'))
 })
+
+test('should transform function into a promise', assert => {
+  assert.plan(1)
+  const cb = success => success('hello')
+  surething(cb).then(val => assert.equal(val, 'hello'))
+})
