@@ -25,3 +25,9 @@ test('should transform boolean into a promise', assert => {
   surething(true)
     .then(val => assert.equal(val, true))
 })
+
+test('should transform object into a promise', assert => {
+  assert.plan(1)
+  surething({name: 'hello'})
+    .then(val => assert.deepEqual(val, {name: 'hello'}))
+})
